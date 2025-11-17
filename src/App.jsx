@@ -1,28 +1,20 @@
-import { useState } from 'react'
+import Home from './pages/Home'
+import WhatWeProtect from './pages/WhatWeProtect'
+import WhySalus from './pages/WhySalus'
+import K9Division from './pages/K9Division'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import { Routes, Route } from 'react-router-dom'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/what-we-protect" element={<WhatWeProtect />} />
+      <Route path="/why-salus" element={<WhySalus />} />
+      <Route path="/k9-division" element={<K9Division />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
   )
 }
-
-export default App
